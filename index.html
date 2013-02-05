@@ -18,6 +18,8 @@
   </head>
 
   <body ng-controller="ResponsiveDemoCtrl">
+    <input type="button" value="one" ng-click="innerClass='inner'"/>
+    <input type="button" value="two" ng-click="innerClass='inner-mobile'"/>
     <header>
       <div class="inner" ng-class="innerClass">
         <h1>Test-ghpages</h1>
@@ -27,7 +29,7 @@
     </header>
 
     <div id="content-wrapper">
-      <div class="inner clearfix">
+      <div class="inner clearfix" ng-class="innerClass">
         <section id="main-content" ng-id="mainContentId">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla sed arcu consectetur placerat. Vestibulum fermentum mauris quis massa pretium ac fermentum magna egestas. Aenean dictum, nunc vel interdum faucibus, orci tortor viverra est, in convallis tellus enim id nisi. Fusce tincidunt, enim et dictum lacinia, metus nisl molestie nibh, id aliquam sapien arcu quis orci. Mauris vitae pharetra nibh. Sed ut metus purus, et condimentum nisi. Maecenas vulputate, turpis nec euismod ultrices, nisi elit suscipit tellus, ac gravida est libero a neque. Donec imperdiet, elit in tempus pulvinar, purus purus luctus enim, sed pulvinar ligula felis nec est. Donec varius quam vestibulum diam laoreet hendrerit eu vitae urna. Morbi volutpat interdum neque, ut mattis tellus adipiscing in. Quisque pulvinar rutrum felis, ac accumsan diam venenatis ac.</p>
 
@@ -103,12 +105,13 @@
       return xWidth;
     }
 	var width = $scope.getWidth($window);
-	if (width < 700) {
+	if (width < 1000) {
+		alert("ff2")
 		$scope.mobile = true;
 	    $scope.mainContentId = "main-content-mobile";
 	    $scope.innerClass = "inner-mobile";
 	}
-	alert("width2=" + $scope.getWidth($window));
+	alert("width3=" + $scope.getWidth($window));
   }    
   </script>  
 </html>
