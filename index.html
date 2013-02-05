@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -14,14 +14,15 @@
     <![endif]-->
 
     <title>Test-ghpages by paul-hammant</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="ResponsiveDemoCtrl">
     <header>
       <div class="inner">
         <h1>Test-ghpages</h1>
         <h2></h2>
-        <a href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
+        <a ng-hide="mobile" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
 
@@ -65,7 +66,7 @@
 <p>Etiam facilisis risus non tortor sagittis auctor. Fusce consectetur eros sed mi viverra vel rutrum eros vulputate. Cras tempus est non neque iaculis in rutrum leo volutpat. Etiam risus augue, ultrices nec ultrices id, volutpat ac tortor. Morbi placerat dui nec massa lobortis aliquam. Nulla facilisi. Donec nec leo a diam vestibulum consequat eu non ligula.</p>
         </section>
 
-        <aside id="sidebar">
+        <aside ng-hide="mobile" id="sidebar">
           <a href="https://github.com/paul-hammant/test-ghpages/zipball/master" class="button">
             <small>Download</small>
             .zip file
@@ -81,7 +82,12 @@
         </aside>
       </div>
     </div>
-
-  
   </body>
+  <script>
+  function ResponsiveDemoCtrl($scope, $window) {
+    $scope.mobile = false;
+	$scope.mobile = $window.document.width < 700;
+	alert("barr" + $window.document.width);
+  }  
+  </script>  
 </html>
