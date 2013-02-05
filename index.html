@@ -102,8 +102,13 @@
 
       return xWidth;
     }
-	$scope.mobile = $scope.getWidth($window);
-	alert("width=" + $scope.getWidth($window));
+	var width = $scope.getWidth($window);
+	if (width < 700) {
+		$scope.mobile = true;
+	    $scope.mainContentId = "main-content-mobile";
+	    $scope.innerClass = "inner-mobile";
+	}
+	alert("width2=" + $scope.getWidth($window));
   }    
   </script>  
 </html>
