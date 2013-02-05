@@ -19,7 +19,7 @@
 
   <body ng-controller="ResponsiveDemoCtrl">
     <header>
-      <div class="inner">
+      <div class="inner" ng-class="innerClass">
         <h1>Test-ghpages</h1>
         <h2></h2>
         <a ng-hide="mobile" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
@@ -28,7 +28,7 @@
 
     <div id="content-wrapper">
       <div class="inner clearfix">
-        <section id="main-content">
+        <section id="main-content" ng-id="mainContentId">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla sed arcu consectetur placerat. Vestibulum fermentum mauris quis massa pretium ac fermentum magna egestas. Aenean dictum, nunc vel interdum faucibus, orci tortor viverra est, in convallis tellus enim id nisi. Fusce tincidunt, enim et dictum lacinia, metus nisl molestie nibh, id aliquam sapien arcu quis orci. Mauris vitae pharetra nibh. Sed ut metus purus, et condimentum nisi. Maecenas vulputate, turpis nec euismod ultrices, nisi elit suscipit tellus, ac gravida est libero a neque. Donec imperdiet, elit in tempus pulvinar, purus purus luctus enim, sed pulvinar ligula felis nec est. Donec varius quam vestibulum diam laoreet hendrerit eu vitae urna. Morbi volutpat interdum neque, ut mattis tellus adipiscing in. Quisque pulvinar rutrum felis, ac accumsan diam venenatis ac.</p>
 
 <p>Vestibulum sollicitudin rutrum pellentesque. Fusce rutrum laoreet lorem a porttitor. Curabitur eu massa at dui auctor facilisis. Fusce in venenatis orci. Aenean ut nibh at nunc facilisis porttitor. Proin mi augue, dictum et tempus eu, condimentum at metus. Quisque scelerisque risus sit amet ipsum ultricies pellentesque.</p>
@@ -86,8 +86,24 @@
   <script>
   function ResponsiveDemoCtrl($scope, $window) {
     $scope.mobile = false;
-	$scope.mobile = $window.document.width < 700;
-	alert("barr" + $window.document.width);
-  }  
+    $scope.mainContentId = "main-content";
+    $scope.innerClass = "inner";
+    $scope.getWidth = function($window)
+    {
+      xWidth = null;
+      if($window.screen != null)
+        xWidth = $window.screen.availWidth;
+
+      if($window.innerWidth != null)
+        xWidth = $window.innerWidth;
+
+      if(document.body != null)
+        xWidth = document.body.clientWidth;
+
+      return xWidth;
+    }
+	$scope.mobile = $scope.getWidth($window);
+	alert("width=" + $scope.getWidth($window));
+  }    
   </script>  
 </html>
