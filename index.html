@@ -23,8 +23,9 @@
                 <td style="width: 20%;"></td>
                 <td>
                     <h1>Test-ghpages</h1>
-                    <h2>{{width}}</h2>
-                    <h2>{{height}}</h2>
+                    <h2>w={{width}} h={{height}}</h2>
+                    <h2 ng-show="mobile">Mobile</h2>
+                    <h2 ng-hide="mobile">Desktop</h2>
                 </td>
                 <td style="width: 20%;">    
                     <a ng-hide="mobile" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
