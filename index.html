@@ -123,13 +123,20 @@
     }
     
     $scope.columnAdjustments = function() {
-        if ($scope.width < 1000) {
+        if ($scope.width < 768) {
             $scope.oneColumn = true;
 			var mid = $scope.width - 30;
             $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };    
             $scope.middleStyle = { width: mid + 'px', maxWidth: mid + 'px', };
             $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };    
-        } else {
+        } else if ($scope.width >= 1024 ){
+            $scope.oneColumn = false;
+            var mid = 1024 - 30;
+            var margin = $scope.width - 1024 + 15;
+            $scope.leftMarginStyle = { width:  margin + 'px' };    
+            $scope.middleStyle = { width: mid + 'px', maxWidth: pc60 + 'px', };    
+            $scope.rightMarginStyle = { width: margin + 'px', verticalAlign: 'text-top' };    
+		} else {
             $scope.oneColumn = false;
             var pc20 = Math.round($scope.width * 0.2);
             var pc60 = Math.round($scope.width * 0.6)
