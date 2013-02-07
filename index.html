@@ -15,6 +15,14 @@
 
         <title>Test-ghpages by paul-hammant</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+		
+		<style>
+		img {
+		    max-width: 100%;
+		    height: auto;
+		    width: auto\9; /* ie8 */
+		}
+		</style>
     </head>
 
     <body ng-controller="ResponsiveDemoCtrl">
@@ -33,7 +41,7 @@
             </tr>
             <tr>
                 <td ng-style="leftMarginStyle"></td>
-                <td>
+                <td ng-style="middleStyle">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla sed arcu consectetur placerat. Vestibulum fermentum mauris quis massa pretium ac fermentum magna egestas. Aenean dictum, nunc vel interdum faucibus, orci tortor viverra est, in convallis tellus enim id nisi. Fusce tincidunt, enim et dictum lacinia, metus nisl molestie nibh, id aliquam sapien arcu quis orci. Mauris vitae pharetra nibh. Sed ut metus purus, et condimentum nisi. Maecenas vulputate, turpis nec euismod ultrices, nisi elit suscipit tellus, ac gravida est libero a neque. Donec imperdiet, elit in tempus pulvinar, purus purus luctus enim, sed pulvinar ligula felis nec est. Donec varius quam vestibulum diam laoreet hendrerit eu vitae urna. Morbi volutpat interdum neque, ut mattis tellus adipiscing in. Quisque pulvinar rutrum felis, ac accumsan diam venenatis ac.</p>
 
 
@@ -106,8 +114,9 @@
     $scope.oneColumn = false;
     $scope.width = 0;
     $scope.height = 0;
-    $scope.leftMarginStyle = { width: '20%' };	
-    $scope.rightMarginStyle = { width: '20%' };	
+    $scope.leftMarginStyle = { width: '20%', maxWidth: '20%' };	
+    $scope.rightMarginStyle = { width: '20%', maxWidth: '20%' };
+    $scope.middleStyle = { width: '60%', maxWidth: '60%' };			
 
     $scope.updateWidth = function() {
 	    $scope.width = $window.innerWidth;
@@ -124,8 +133,11 @@
             $scope.rightMarginStyle = { width: '15px', verticalAlign: 'text-top' };	
 	    } else {
 		    $scope.oneColumn = false;
-            $scope.leftMarginStyle = { width: '20%' };	
-            $scope.rightMarginStyle = { width: '20%', verticalAlign: 'text-top' };	
+			var pc20 = Math.round($scope.width * 0.2);
+			var pc60 = Math.round($scope.width * 0.6)
+            $scope.leftMarginStyle = { width:  pc20 + 'px' };	
+			$scope.middleStyle = { width: pc60 + 'px', maxWidth: pc60 + 'px', };	
+            $scope.rightMarginStyle = { width: pc20 + 'px', verticalAlign: 'text-top' };	
 	    }
     }	
     
