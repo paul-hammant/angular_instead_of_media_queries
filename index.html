@@ -132,7 +132,9 @@
     $scope.columnAdjustments = function() {
         if ($scope.width < 1000) {
             $scope.oneColumn = true;
+			var mid = $scope.width - 30;
             $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };    
+            $scope.middleStyle = { width: mid + 'px', maxWidth: mid + 'px', };
             $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };    
         } else {
             $scope.oneColumn = false;
