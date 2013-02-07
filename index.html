@@ -98,43 +98,36 @@
     $scope.innerClass = "inner";
     
     $scope.width = 0;
-    $scope.updateWidth = function()
-    {
-	$scope.width = $window.innerWidth;
-    }
-
-    $scope.updateWidth($window);
-
-    if ($scope.width < 1000) {
-	    $scope.mobile = true;
-	    $scope.mainContentId = "main-content-mobile";
-	    $scope.innerClass = "inner-mobile";
-    }
-
-
     $scope.height = 0;
 
- 
-    $scope.updateHeight = function()
-    {
+    $scope.updateWidth = function() {
+	    $scope.width = $window.innerWidth;
+    }
+
+    $scope.updateHeight = function() {
        $scope.height = $window.innerHeight;
     }
+	
+    $scope.mobileOrDesktop = function() {
+	    if ($scope.width < 1000) {
+		    $scope.mobile = true;
+		    $scope.mainContentId = "main-content-mobile";
+		    $scope.innerClass = "inner-mobile";
+	    } else {
+		    $scope.mobile = false;
+	    }
+    }	
     
+    $scope.updateWidth();
     $scope.updateHeight();
-
-    if ($scope.height < 1000) {
-	    $scope.mobile = true;
-	    $scope.mainContentId = "main-content-mobile";
-	    $scope.innerClass = "inner-mobile";
-    }
-
+	$scope.mobileOrDesktop();
 
     $window.onresize = function () {
         $scope.updateWidth();
-
         $scope.updateHeight();
+        $scope.mobileOrDesktop();
         $scope.$apply();
     }
-  }    
-  </script>  
+  }
+  </script>
 </html>
