@@ -20,19 +20,19 @@
     <body ng-controller="ResponsiveDemoCtrl">
         <table> 
             <tr class="inner head" ng-class="innerClass">
-                <td style="width: 20%;"></td>
+                <td ng-style="leftMarginStyle"></td>
                 <td>
                     <h1>Test-ghpages</h1>
                     <h2>w={{width}} h={{height}}</h2>
                     <h2 ng-show="oneColumn">One Column</h2>
                     <h2 ng-hide="oneColumn">Three Column</h2>
                 </td>
-                <td style="width: 20%;">    
+                <td ng-style="rightMarginStyle">    
                     <a ng-hide="oneColumn" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
                 </td>
             </tr>
             <tr>
-                <td style="width: 20%;"></td>
+                <td ng-style="leftMarginStyle"></td>
                 <td>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla sed arcu consectetur placerat. Vestibulum fermentum mauris quis massa pretium ac fermentum magna egestas. Aenean dictum, nunc vel interdum faucibus, orci tortor viverra est, in convallis tellus enim id nisi. Fusce tincidunt, enim et dictum lacinia, metus nisl molestie nibh, id aliquam sapien arcu quis orci. Mauris vitae pharetra nibh. Sed ut metus purus, et condimentum nisi. Maecenas vulputate, turpis nec euismod ultrices, nisi elit suscipit tellus, ac gravida est libero a neque. Donec imperdiet, elit in tempus pulvinar, purus purus luctus enim, sed pulvinar ligula felis nec est. Donec varius quam vestibulum diam laoreet hendrerit eu vitae urna. Morbi volutpat interdum neque, ut mattis tellus adipiscing in. Quisque pulvinar rutrum felis, ac accumsan diam venenatis ac.</p>
 
@@ -71,7 +71,7 @@
 
                     <p>Etiam facilisis risus non tortor sagittis auctor. Fusce consectetur eros sed mi viverra vel rutrum eros vulputate. Cras tempus est non neque iaculis in rutrum leo volutpat. Etiam risus augue, ultrices nec ultrices id, volutpat ac tortor. Morbi placerat dui nec massa lobortis aliquam. Nulla facilisi. Donec nec leo a diam vestibulum consequat eu non ligula.</p>
                 </td>
-                <td ng-hide="oneColumn" style="width: 20%; vertical-align: text-top;">
+                <td ng-hide="oneColumn" ng-style="rightMarginStyle">
                     <a href="https://github.com/paul-hammant/test-ghpages/zipball/master" class="button">
                         <small>Download</small>
                         .zip file
@@ -94,11 +94,10 @@
   <script>
   function ResponsiveDemoCtrl($scope, $window) {
     $scope.oneColumn = false;
-    $scope.mainContentId = "main-content";
-    $scope.innerClass = "inner";
-    
     $scope.width = 0;
     $scope.height = 0;
+    $scope.leftMarginStyle = { width: '20%' };	
+    $scope.rightMarginStyle = { width: '20%' };	
 
     $scope.updateWidth = function() {
 	    $scope.width = $window.innerWidth;
@@ -111,10 +110,12 @@
     $scope.oneColumnOrMore = function() {
 	    if ($scope.width < 1000) {
 		    $scope.oneColumn = true;
-		    $scope.mainContentId = "main-content-mobile";
-		    $scope.innerClass = "inner-mobile";
+            $scope.leftMarginStyle = { width: '15px' };	
+            $scope.rightMarginStyle = { width: '15px', verticalAlign: 'text-top' };	
 	    } else {
 		    $scope.oneColumn = false;
+            $scope.leftMarginStyle = { width: '20%' };	
+            $scope.rightMarginStyle = { width: '20%', verticalAlign: 'text-top' };	
 	    }
     }	
     
