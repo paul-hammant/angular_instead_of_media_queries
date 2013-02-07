@@ -31,12 +31,12 @@
                 <td ng-style="leftMarginStyle"></td>
                 <td>
                     <h1>Test-ghpages</h1>
-                    <p>w={{width}} h={{height}}</p>
-                    <p ng-show="oneColumn">One Column</p>
-                    <p ng-hide="oneColumn">Three Column</p>
-                    <p>l = {{leftMarginStyle}}</p>
-                    <p>m = {{middleStyle}}</p>
-                    <p>r = {{rightMarginStyle}}</p>
+                    <p>w={{width}} h={{height}} 
+                    <span ng-show="oneColumn">One Column</span> 
+                    <span ng-hide="oneColumn">Three Column</span></p>
+                    <p>l = {{leftMarginStyle}}, <br/>
+                       m = {{middleStyle}}, <br/>
+                       r = {{rightMarginStyle}}</p>
                 </td>
                 <td ng-style="rightMarginStyle">
                     <a ng-hide="oneColumn" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
