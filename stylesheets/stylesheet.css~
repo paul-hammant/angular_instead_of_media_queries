@@ -79,7 +79,6 @@ a:hover {
   line-height: 1;
   margin-bottom: 0.2em;
   width: 540px;
-	text-align:left;
 }
 
 .head h2 {

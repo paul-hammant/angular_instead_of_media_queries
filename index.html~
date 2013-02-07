@@ -21,7 +21,7 @@
     <table> 
 			<tr class="inner head" ng-class="innerClass">
 				<td></td>
-				<td>
+				<td >
 					<h1>Test-ghpages</h1>
 	        <h2>{{width}}</h2>
         </td>
