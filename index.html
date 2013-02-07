@@ -15,14 +15,14 @@
 
         <title>Test-ghpages by paul-hammant</title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-		
-		<style>
-		img {
-		    max-width: 100%;
-		    height: auto;
-		    width: auto\9; /* ie8 */
-		}
-		</style>
+        
+        <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            width: auto\9; /* ie8 */
+        }
+        </style>
     </head>
 
     <body ng-controller="ResponsiveDemoCtrl">
@@ -34,8 +34,11 @@
                     <h2>w={{width}} h={{height}}</h2>
                     <h2 ng-show="oneColumn">One Column</h2>
                     <h2 ng-hide="oneColumn">Three Column</h2>
+                    <h2>l = {{leftMarginStyle}}</h2>
+                    <h2>m = {{middleStyle}}</h2>
+                    <h2>r = {{rightMarginStyle}}</h2>
                 </td>
-                <td ng-style="rightMarginStyle">    
+                <td ng-style="rightMarginStyle">
                     <a ng-hide="oneColumn" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
                 </td>
             </tr>
@@ -45,23 +48,23 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla sed arcu consectetur placerat. Vestibulum fermentum mauris quis massa pretium ac fermentum magna egestas. Aenean dictum, nunc vel interdum faucibus, orci tortor viverra est, in convallis tellus enim id nisi. Fusce tincidunt, enim et dictum lacinia, metus nisl molestie nibh, id aliquam sapien arcu quis orci. Mauris vitae pharetra nibh. Sed ut metus purus, et condimentum nisi. Maecenas vulputate, turpis nec euismod ultrices, nisi elit suscipit tellus, ac gravida est libero a neque. Donec imperdiet, elit in tempus pulvinar, purus purus luctus enim, sed pulvinar ligula felis nec est. Donec varius quam vestibulum diam laoreet hendrerit eu vitae urna. Morbi volutpat interdum neque, ut mattis tellus adipiscing in. Quisque pulvinar rutrum felis, ac accumsan diam venenatis ac.</p>
 
 
-					<!--img src="http://placekitten.com/g/2000/300"/-->
+                    <!--img src="http://placekitten.com/g/2000/300"/-->
 
                     <p>Vestibulum sollicitudin rutrum pellentesque. Fusce rutrum laoreet lorem a porttitor. Curabitur eu massa at dui auctor facilisis. Fusce in venenatis orci. Aenean ut nibh at nunc facilisis porttitor. Proin mi augue, dictum et tempus eu, condimentum at metus. Quisque scelerisque risus sit amet ipsum ultricies pellentesque.</p>
 
-					<!--img src="http://placekitten.com/g/1500/300"/-->
+                    <!--img src="http://placekitten.com/g/1500/300"/-->
 
                     <p>Integer non metus libero. Sed orci risus, blandit in imperdiet consectetur, auctor a orci. Aenean iaculis eros eget arcu posuere condimentum. Maecenas sed tristique nisl. Donec sagittis volutpat mi sed mattis. Fusce laoreet, eros at molestie volutpat, mi sapien dapibus nisl, sed pellentesque mi sem sit amet lacus. Mauris interdum faucibus velit in faucibus. Sed ac vulputate ligula. Vivamus posuere consequat lectus vitae pulvinar. Nullam id ligula varius quam tincidunt posuere. Etiam ut diam eget lacus adipiscing volutpat sed sed urna. Donec eu massa quam.</p>
 
-					<!--img src="http://placekitten.com/g/1000/300"/-->
+                    <!--img src="http://placekitten.com/g/1000/300"/-->
 
                     <p>Morbi id congue augue. Sed adipiscing quam pharetra libero tempus non volutpat ante commodo. Aliquam ultrices felis vitae enim placerat eget malesuada magna scelerisque. Nam euismod eros eget ante faucibus aliquam. Maecenas accumsan auctor tellus sed lacinia. Integer adipiscing augue sit amet tellus vulputate tempus. Aliquam luctus lacus et est blandit mattis. Cras a quam leo, vitae aliquet sapien. Ut hendrerit turpis vel lorem consequat luctus.</p>
 
-					<!--img src="http://placekitten.com/g/500/300"/-->
+                    <!--img src="http://placekitten.com/g/500/300"/-->
 
                     <p>Pellentesque et lacus arcu, sit amet suscipit sapien. Mauris sagittis posuere nibh, et adipiscing nisi blandit sit amet. Quisque in sem pulvinar velit ornare ullamcorper vitae eu diam. Pellentesque commodo bibendum purus, sit amet tempor arcu blandit vel. Vestibulum placerat lacus vitae ipsum venenatis vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer commodo nisi tempor urna dictum tincidunt vitae ac leo. Suspendisse potenti. Pellentesque sagittis posuere tristique. Nunc feugiat dui magna.</p>
 
-					<img src="http://placekitten.com/g/200/150"/>
+                    <img src="http://placekitten.com/g/200/150"/>
 
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sodales blandit aliquet. Quisque consectetur, nulla quis congue volutpat, elit est eleifend lacus, a condimentum odio lorem et ipsum. Fusce faucibus scelerisque elit, tincidunt posuere risus luctus et. Donec id turpis eros, in laoreet nulla. Sed pellentesque libero vitae nisi tempor eget malesuada arcu adipiscing. Aliquam lacinia augue vitae ante tempor vitae tincidunt metus euismod. Proin vel augue ac velit imperdiet ornare a malesuada arcu. Vestibulum porttitor ultrices mollis. Nunc nec fermentum magna. Aliquam diam massa, lacinia sit amet molestie ac, volutpat ut leo. Maecenas malesuada, neque a dignissim scelerisque, tellus mauris iaculis odio, non lobortis elit orci ut sem. Nullam rutrum, tellus sed dignissim posuere, lacus purus pellentesque neque, vel laoreet sem quam semper dui.</p>
 
@@ -104,7 +107,7 @@
                     <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
                 </td>
             </tr>
-        </table>	
+        </table>    
     </body>
 
 
@@ -114,36 +117,36 @@
     $scope.oneColumn = false;
     $scope.width = 0;
     $scope.height = 0;
-    $scope.leftMarginStyle = { width: '20%', maxWidth: '20%' };	
+    $scope.leftMarginStyle = { width: '20%', maxWidth: '20%' };    
     $scope.rightMarginStyle = { width: '20%', maxWidth: '20%' };
-    $scope.middleStyle = { width: '60%', maxWidth: '60%' };			
+    $scope.middleStyle = { width: '60%', maxWidth: '60%' };            
 
     $scope.updateWidth = function() {
-	    $scope.width = $window.innerWidth;
+        $scope.width = $window.innerWidth;
     }
 
     $scope.updateHeight = function() {
        $scope.height = $window.innerHeight;
     }
-	
+    
     $scope.columnAdjustments = function() {
-	    if ($scope.width < 1000) {
-		    $scope.oneColumn = true;
-            $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };	
-            $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };	
-	    } else {
-		    $scope.oneColumn = false;
-			var pc20 = Math.round($scope.width * 0.2);
-			var pc60 = Math.round($scope.width * 0.6)
-            $scope.leftMarginStyle = { width:  pc20 + 'px' };	
-			$scope.middleStyle = { width: pc60 + 'px', maxWidth: pc60 + 'px', };	
-            $scope.rightMarginStyle = { width: pc20 + 'px', verticalAlign: 'text-top' };	
-	    }
-    }	
+        if ($scope.width < 1000) {
+            $scope.oneColumn = true;
+            $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };    
+            $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };    
+        } else {
+            $scope.oneColumn = false;
+            var pc20 = Math.round($scope.width * 0.2);
+            var pc60 = Math.round($scope.width * 0.6)
+            $scope.leftMarginStyle = { width:  pc20 + 'px' };    
+            $scope.middleStyle = { width: pc60 + 'px', maxWidth: pc60 + 'px', };    
+            $scope.rightMarginStyle = { width: pc20 + 'px', verticalAlign: 'text-top' };    
+        }
+    }    
     
     $scope.updateWidth();
     $scope.updateHeight();
-	$scope.columnAdjustments();
+    $scope.columnAdjustments();
 
     $window.onresize = function () {
         $scope.updateWidth();
