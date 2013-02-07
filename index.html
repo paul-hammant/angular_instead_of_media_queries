@@ -23,7 +23,7 @@
     <header>
       <div class="inner" ng-class="innerClass">
         <h1>Test-ghpages</h1>
-        <h2></h2>
+        <h2 id="widthAndHeight"></h2>
         <a ng-hide="mobile" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
@@ -95,7 +95,7 @@
       xWidth = null;
       if($window.screen != null)
         xWidth = $window.screen.availWidth;
-
+				
       if($window.innerWidth != null)
         xWidth = $window.innerWidth;
 
@@ -104,14 +104,32 @@
 
       return xWidth;
     }
+
+		$scope.getHeight = function($window)
+		{
+			xHeight = null;
+			debugger;
+      if($window.screen != null)
+        xHeight = $window.screen.availHeight;
+				
+      if($window.innerHeight != null)
+        xHeight = $window.innerHeight;
+
+      /*if(document.body != null)
+        xHeight = document.body.clientHeight;*/
+
+      return xHeight;
+		}
 	var width = $scope.getWidth($window);
+	var height = $scope.getHeight($window);
 	if (width < 1000) {
 		alert("ff2")
 		$scope.mobile = true;
 	    $scope.mainContentId = "main-content-mobile";
 	    $scope.innerClass = "inner-mobile";
 	}
+  document.getElementById("widthAndHeight").innerHTML= width + " " +height;
 	alert("width3=" + $scope.getWidth($window));
   }    
   </script>  
-</html>
+</html> 
