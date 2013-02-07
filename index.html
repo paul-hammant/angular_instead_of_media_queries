@@ -131,10 +131,10 @@
             $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };    
         } else if ($scope.width >= 1024 ){
             $scope.oneColumn = false;
-            var mid = 1024 - 30;
-            var margin = $scope.width - 1024 + 15;
+            var mid = 614;
+            var margin = ($scope.width - 614) * 0.5;
             $scope.leftMarginStyle = { width:  margin + 'px' };    
-            $scope.middleStyle = { width: mid + 'px', maxWidth: pc60 + 'px', };    
+            $scope.middleStyle = { width: mid + 'px', maxWidth: mid + 'px', };    
             $scope.rightMarginStyle = { width: margin + 'px', verticalAlign: 'text-top' };    
 		} else {
             $scope.oneColumn = false;
