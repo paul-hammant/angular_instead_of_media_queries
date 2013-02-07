@@ -126,11 +126,11 @@
        $scope.height = $window.innerHeight;
     }
 	
-    $scope.oneColumnOrMore = function() {
+    $scope.columnAdjustments = function() {
 	    if ($scope.width < 1000) {
 		    $scope.oneColumn = true;
-            $scope.leftMarginStyle = { width: '15px' };	
-            $scope.rightMarginStyle = { width: '15px', verticalAlign: 'text-top' };	
+            $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };	
+            $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };	
 	    } else {
 		    $scope.oneColumn = false;
 			var pc20 = Math.round($scope.width * 0.2);
@@ -143,12 +143,12 @@
     
     $scope.updateWidth();
     $scope.updateHeight();
-	$scope.oneColumnOrMore();
+	$scope.columnAdjustments();
 
     $window.onresize = function () {
         $scope.updateWidth();
         $scope.updateHeight();
-        $scope.oneColumnOrMore();
+        $scope.columnAdjustments();
         $scope.$apply();
     }
   }
