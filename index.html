@@ -31,9 +31,7 @@
                 <td ng-style="leftMarginStyle"></td>
                 <td>
                     <h1>Test-ghpages</h1>
-                    <p>w={{width}} h={{height}} 
-                    <span ng-show="oneColumn">One Column</span> 
-                    <span ng-hide="oneColumn">Three Column</span></p>
+                    <p>w={{width}} h={{height}} <span ng-show="oneColumn">One Column</span> <span ng-hide="oneColumn">Three Column</span></p>
                     <p>l = {{leftMarginStyle}}, <br/>
                        m = {{middleStyle}}, <br/>
                        r = {{rightMarginStyle}}</p>
@@ -108,10 +106,6 @@
                 </td>
             </tr>
         </table>    
-    </body>
-
-
-
   <script>
   function ResponsiveDemoCtrl($scope, $window) {
     $scope.oneColumn = false;
@@ -158,4 +152,5 @@
     }
   }
   </script>
+  </body>  
 </html>
