@@ -27,22 +27,20 @@
 
     <body ng-controller="ResponsiveDemoCtrl">
         <table> 
-            <tr class="inner head" ng-class="innerClass">
+            <tr class="inner head">
                 <td ng-style="leftMarginStyle"></td>
                 <td>
                     <h1>Test-ghpages</h1>
-                    <p>w={{width}} h={{height}} <span ng-show="oneColumn">One Column</span> <span ng-hide="oneColumn">Three Column</span></p>
-                    <p>l = {{leftMarginStyle}}, <br/>
-                       m = {{middleStyle}}, <br/>
-                       r = {{rightMarginStyle}}</p>
+                    <p>w={{width}} h={{height}} <span ng-show="oneColumn">One Column with thin margins</span> <span ng-hide="oneColumn">Three Columns</span></p>
+                    <p>l = {{leftMarginStyle}},  m = {{middleStyle}}, r = {{rightMarginStyle}}</p>
                 </td>
                 <td ng-style="rightMarginStyle">
                     <a ng-hide="oneColumn" href="https://github.com/paul-hammant/test-ghpages" class="button"><small>View project on</small>GitHub</a>
                 </td>
             </tr>
             <tr>
-                <td ng-style="leftMarginStyle"></td>
-                <td ng-style="middleStyle">
+                <td ng-style="leftMarginStyle" style="width: 40%"></td>
+                <td ng-style="middleStyle" style="width: 20%">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla sed arcu consectetur placerat. Vestibulum fermentum mauris quis massa pretium ac fermentum magna egestas. Aenean dictum, nunc vel interdum faucibus, orci tortor viverra est, in convallis tellus enim id nisi. Fusce tincidunt, enim et dictum lacinia, metus nisl molestie nibh, id aliquam sapien arcu quis orci. Mauris vitae pharetra nibh. Sed ut metus purus, et condimentum nisi. Maecenas vulputate, turpis nec euismod ultrices, nisi elit suscipit tellus, ac gravida est libero a neque. Donec imperdiet, elit in tempus pulvinar, purus purus luctus enim, sed pulvinar ligula felis nec est. Donec varius quam vestibulum diam laoreet hendrerit eu vitae urna. Morbi volutpat interdum neque, ut mattis tellus adipiscing in. Quisque pulvinar rutrum felis, ac accumsan diam venenatis ac.</p>
 
                     <img src="http://placekitten.com/g/2000/300"/>
@@ -59,7 +57,7 @@
 
                     <img src="http://placekitten.com/g/500/300"/>
 
-                    <p>Pellentesque et lacus arcu, sit amet suscipit sapien. Mauris sagittis posuere nibh, et adipiscing nisi blandit sit amet. Quisque in sem pulvinar velit ornare ullamcorper vitae eu diam. Pellentesque commodo bibendum purus, sit amet tempor arcu blandit vel. Vestibulum placerat lacus vitae ipsum venenatis vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer commodo nisi tempor urna dictum tincidunt vitae ac leo. Suspendisse potenti. Pellentesque sagittis posuere tristique. Nunc feugiat dui magna.</p>
+                    <p>Pellentesque et lacus arcu, sit amet suscipit sapien. Mauris sagittis posuere nibh, et adipiscing nisi blandit sit amet. Quisque in sem pulvinar velit ornare ullamcorper vitae eu diam. Pellentesque commodo bibendum purus, sit amet tempor arcu blandit vel. Vestibulum placerat lacus vitae ipsum venenatis vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer commodo nisi tempor urna dictum tincidunt vitae ac leo. Suspendisse potenti. Pellentesque sagittis posuere tristique. Nunc cachinnation feugiat dui magna.</p>
 
                     <img src="http://placekitten.com/g/200/150"/>
 
@@ -89,7 +87,7 @@
 
                     <p>Etiam facilisis risus non tortor sagittis auctor. Fusce consectetur eros sed mi viverra vel rutrum eros vulputate. Cras tempus est non neque iaculis in rutrum leo volutpat. Etiam risus augue, ultrices nec ultrices id, volutpat ac tortor. Morbi placerat dui nec massa lobortis aliquam. Nulla facilisi. Donec nec leo a diam vestibulum consequat eu non ligula.</p>
                 </td>
-                <td ng-hide="oneColumn" ng-style="rightMarginStyle">
+                <td ng-hide="oneColumn" ng-style="rightMarginStyle" style="width: 40%">
                     <a href="https://github.com/paul-hammant/test-ghpages/zipball/master" class="button">
                         <small>Download</small>
                         .zip file
@@ -110,9 +108,9 @@
     $scope.oneColumn = false;
     $scope.width = 0;
     $scope.height = 0;
-    $scope.leftMarginStyle = { width: '20%', maxWidth: '20%' };    
-    $scope.rightMarginStyle = { width: '20%', maxWidth: '20%' };
-    $scope.middleStyle = { width: '60%', maxWidth: '60%' };            
+    $scope.leftMarginStyle = {};
+    $scope.rightMarginStyle = {};
+    $scope.middleStyle = {};
 
     $scope.updateWidth = function() {
         $scope.width = $window.innerWidth;
@@ -125,18 +123,18 @@
     $scope.columnAdjustments = function() {
         if ($scope.width < 768) {
             $scope.oneColumn = true;
-			var mid = $scope.width - 30;
-            $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };    
+            var mid = $scope.width - 30;
+            $scope.leftMarginStyle = { width: '15px', maxWidth: '15px' };
             $scope.middleStyle = { width: mid + 'px', maxWidth: mid + 'px', };
-            $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };    
+            $scope.rightMarginStyle = { width: '15px', maxWidth: '15px', verticalAlign: 'text-top' };
         } else if ($scope.width >= 1024 ){
             $scope.oneColumn = false;
             var mid = 614;
             var margin = ($scope.width - 614) * 0.5;
-            $scope.leftMarginStyle = { width:  margin + 'px' };    
-            $scope.middleStyle = { width: mid + 'px', maxWidth: mid + 'px', };    
-            $scope.rightMarginStyle = { width: margin + 'px', verticalAlign: 'text-top' };    
-		} else {
+            $scope.leftMarginStyle = { width:  margin + 'px' };
+            $scope.middleStyle = { width: mid + 'px', maxWidth: mid + 'px', };
+            $scope.rightMarginStyle = { width: margin + 'px', verticalAlign: 'text-top' };
+        } else {
             $scope.oneColumn = false;
             var pc20 = Math.round($scope.width * 0.2);
             var pc60 = Math.round($scope.width * 0.6)
